@@ -1,6 +1,6 @@
 
-var esponja, fondo, pantalla;
-
+var esponja, fondo, pantalla, input;
+//var button;
 var message = "C    MING \n      BACK",
   font,
   bounds, 
@@ -19,7 +19,11 @@ fondo = loadImage("data/fondo.jpg");
 function setup() {
   createCanvas(1024,768);
 pantalla=0;
-
+//input = createInput();
+//button = createButton('Instrucciones');
+//button.position(200,150);
+//button.size(100,60);
+//button.mousePressed(instruc)
   
   textFont(font);
   textSize(fontsize);
@@ -30,16 +34,8 @@ pantalla=0;
 }
 
 function draw() {
-  if (pantalla==0) {
-    inicio1();
-    
-  } else  {(pantalla==1)
-    juego();
-  }
+inicio1();
 
- 
-
-  // write the text in black and get its bounding box
   fill(255,200);
   text(message, x, y);
   bounds = font.textBounds(message,x,y,fontsize);
@@ -52,13 +48,6 @@ function draw() {
   }
 }
 
-function mousePressed() {
-
-if (pantalla==0){
-    pantalla=1;
-
-}
-}
 function inicio1(){
   background(fondo);  
   textSize(100);
@@ -67,10 +56,13 @@ function inicio1(){
   animation(esponja, 535, 525);
   
 }
-function juego(){
-  
-  background(0);  
-  
+
+function instruc(){
+  background(0);
+  fill(255);
+  noStroke();
+  rect(300,300, 200,50);
   
 }
+
 
